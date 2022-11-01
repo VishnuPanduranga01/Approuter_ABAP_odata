@@ -1,0 +1,52 @@
+_schema-version: "3.2"
+ID: Test_ui5App_XSUAA
+description: Test authentication.
+version: 0.0.1
+
+modules: 
+ - name: Test_ui5App_XSUAA
+   type: nodejs
+   path: ./approuter
+   parameters:
+    memory: 256M
+    disk-quota: 256M
+   properties:
+    TENANT_HOST_PATTERN: ^(.*).${space}-test-ui5app-xsuaa.${default-domain} 
+   build-parameters:
+    builder: custom
+    commands: []
+    ignore:
+    - node_modules
+    - package-lock.json
+    - default-env.json
+    - Makefile_20220930223854.mta
+   requires:
+    - name: vis_xsuaa_ui5
+    - name: northwind
+      group: destinations
+      properties:
+        url: https://services.odata.org
+        forwardAuthToken: true
+    - name: abapodata
+      group: destinations
+      properties:
+        url: https://6654aaf7-905f-48ea-b013-3811c03fcba8.abap.us10.hana.ondemand.com
+        forwardAuthToken: true    
+
+resources:
+  - name: vis_xsuaa_ui5
+    type: org.cloudfoundry.managed-service
+    parameters:
+      path: ./xs-security.json
+      service: xsuaa
+      service-plan: application
+  - name: northwind
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite
+  - name: abapodata
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite    

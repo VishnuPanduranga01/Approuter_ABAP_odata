@@ -1,0 +1,43 @@
+{
+    "destinations":[{
+
+        "name":"northwind",
+        "url":"https://services.odata.org"
+    }],
+    "VCAP_SERVICES": {
+		"xsuaa": [
+			{
+				"label": "xsuaa",
+				"provider": null,
+				"plan": "application",
+				"name": "vis_xsuaa_ui5",
+				"tags": [
+					"xsuaa"
+				],
+				"instance_guid": "abb47a77-dde9-4b3e-8c34-ae406ea90e6e",
+				"instance_name": "vis_xsuaa_ui5",
+				"binding_guid": "2e7ed267-1fa9-4a5b-9aac-f1f1da49c9e1",
+				"binding_name": null,
+				"credentials": {
+					"tenantmode": "dedicated",
+					"sburl": "https://internal-xsuaa.authentication.us10.hana.ondemand.com",
+					"subaccountid": "6f9204e7-278e-4793-b85a-06fe8c5a53c3",
+					"credential-type": "instance-secret",
+					"clientid": "sb-na-97259e4b-004e-4f54-b98b-db05fe89093e!t93293",
+					"xsappname": "na-97259e4b-004e-4f54-b98b-db05fe89093e!t93293",
+					"clientsecret": "7tmbh5qpwUFb5gJXRml9S324xMQ=",
+					"url": "https://fa235900trial.authentication.us10.hana.ondemand.com",
+					"uaadomain": "authentication.us10.hana.ondemand.com",
+					"verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtCZFAWpbSX+kJkP1Q4tP\ny8QGolD/KZ9l7JY6QgX7I455mlawULzSKuVS7ltWcNCXK0D4ZPl1EIKQxyMmJC85\nv+TSDbpvhX5KMl8fyGCuoagDQ0cAHHMyQieTUvjYUdjSO7UtlmIILXj2N7nHoARZ\n73nfsNtdyYn9eAnRE8Ku+ah3lLGHoR/McqCe/Ullxq56df/MLHy+HXCJNM8Yt7Yh\nEd65TRD2PhquL20ANnRSrrCSr5CphgLq+snLkXHrq3KKAHBbMCWZfB8/usmWTfFX\nxAPRwNSHXJS4/Qv/PwbzpbtlsjiMNlEdG9W9ik1H00uSgY+lK91Vcbuv5cEMY+ff\nTwIDAQAB\n-----END PUBLIC KEY-----",
+					"apiurl": "https://api.authentication.us10.hana.ondemand.com",
+					"identityzone": "fa235900trial",
+					"identityzoneid": "6f9204e7-278e-4793-b85a-06fe8c5a53c3",
+					"tenantid": "6f9204e7-278e-4793-b85a-06fe8c5a53c3",
+					"zoneid": "6f9204e7-278e-4793-b85a-06fe8c5a53c3"
+				},
+				"syslog_drain_url": null,
+				"volume_mounts": []
+			}
+		]
+	} 
+}

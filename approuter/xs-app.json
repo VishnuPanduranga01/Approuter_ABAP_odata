@@ -1,0 +1,27 @@
+{
+    "welcomeFile":"/index.html",
+    "authenticationMethod": "route",
+    "routes":[
+        {
+            "source": "^/index(.*)$",
+            "target": "index.html",
+            "localDir": ".",
+            "cacheControl": "no-cache"
+        },
+        
+        {
+            "source": "^/v4/(.*)$",
+            "target": "$1",
+            "authenticationType": "xsuaa",
+            "destination": "northwind",
+            "csrfProtection": false
+        },
+        {
+            "source": "^/sap/(.*)$",
+            "target": "/sap/$1",
+            "authenticationType": "xsuaa",
+            "destination": "abapodata",
+            "csrfProtection": false
+        }
+    ]
+}
